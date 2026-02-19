@@ -1056,26 +1056,6 @@ governing body.
 the context of the cart (e.g., removing "Buy Now Pay Later" for subscription
 items, or filtering regional methods based on shipping address).
 
-### Risk Signals
-
-To aid in fraud assessment, the Platform **MAY** include additional risk signals
-in the `complete` call, providing the Business with more context about the
-transaction's legitimacy. The structure and content of these risk signals are
-not strictly defined by this specification, allowing flexibility based on the
-agreement between the Platform and Business or specific payment handler
-requirements.
-
-**Example (Flexible Structure):**
-
-```json
-{
-  "risk_signals": {
-    "session_id": "abc_123_xyz",
-    "score": 0.95,
-  }
-}
-```
-
 ### Implementation Scenarios
 
 The following scenarios illustrate how different payment handlers and
@@ -1181,9 +1161,6 @@ POST /checkout-sessions/{id}/complete
         }
       }
     ]
-  },
-  "risk_signals": {
-      // ...
   }
 }
 ```
@@ -1238,9 +1215,6 @@ POST /checkout-sessions/{id}/complete
         "credential": { "token": "tok_visa_123" }
       }
     ]
-  },
-  "risk_signals": {
-    // ... host could send risk_signals here
   }
 }
 ```
@@ -1313,10 +1287,6 @@ POST /checkout-sessions/{id}/complete
         }
       }
     ]
-  },
-  "risk_signals": {
-    "session_id": "abc_123_xyz",
-    "score": 0.95
   },
   "ap2": {
     "checkout_mandate": "eyJhbGciOiJ...", // Signed proof of checkout terms

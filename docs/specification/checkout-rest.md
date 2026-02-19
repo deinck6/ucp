@@ -734,9 +734,6 @@ place to set these expectations via `messages`.
             }
           }
         ]
-      },
-      "risk_signals": {
-        //... risk signal related data (device fingerprint / risk token)
       }
     }
     ```

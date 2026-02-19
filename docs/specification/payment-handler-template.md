@@ -283,9 +283,6 @@ Content-Type: application/json
         // Additional instrument fields
       }
     ]
-  },
-  "risk_signals": {
-    // risk signal objects here
   }
 }
 ```
